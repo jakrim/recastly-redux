@@ -1,21 +1,20 @@
-var searchYouTube = ({key, query, max = 5}, callback) => {
-  $.get('https://www.googleapis.com/youtube/v3/search', {
-    part: 'snippet',
+var searchYouTube = ({ key, query, max = 5 }, callback) => {
+  $.get("https://www.googleapis.com/youtube/v3/search", {
+    part: "snippet",
     key: key,
     q: query,
     maxResults: max,
-    type: 'video',
-    videoEmbeddable: 'true'
+    type: "video",
+    videoEmbeddable: "true"
   })
-    .done(({items}) => {
+    .done(({ items }) => {
       if (callback) {
         callback(items);
       }
     })
-    .fail(({responseJSON}) => {
-      responseJSON.error.errors.forEach((err) =>
-        console.error(err)
-      );
+    .fail(({ responseJSON }) => {
+      console.log("hi");
+      responseJSON.error.errors.forEach(err => console.error(err));
     });
 };
 

@@ -4,17 +4,19 @@ import changeVideo from "../actions/currentVideo";
 
 //TODO: define a VideoPlayerContainer component which will hook up your action
 //dispatchers with your VideoPlayer component props.
+var VideoPlayer = <VideoPlayer {...props} />;
+
 const mapStateToProps = store => ({
-  currentVideo: store.currentVideo
+  video: store.video
 });
 
 const mapDispatchToProps = dispatch => ({
-  onClick: currentVideo => dispatch(changeVideo(currentVideo))
+  onClick: video => dispatch(changeVideo(video))
 });
 
-const VideoPlayerContainer = connect(
+VideoPlayer = connect(
   mapStateToProps,
   mapDispatchToProps
 )(VideoPlayer);
 
-export default VideoPlayerContainer;
+export default VideoPlayer;
