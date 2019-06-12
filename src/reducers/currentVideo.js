@@ -1,13 +1,11 @@
-// import Redux from "redux";
-// import changeVideo from "../actions/currentVideo";
+import Redux from "redux";
+import changeVideo from "../actions/currentVideo";
 
-var init = { video: [] };
-
-var currentVideoReducer = (state = init, action) => {
+var currentVideoReducer = (state = null, action) => {
   //TODO: define a reducer for the currentVideo field of our state.
   switch (action.type) {
     case "CHANGE_VIDEO":
-      return Object.assign({}, state, { video: action.video });
+      return Object.assign({}, state, action.video);
     default:
       return state;
   }
