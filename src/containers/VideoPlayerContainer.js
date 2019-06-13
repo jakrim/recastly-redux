@@ -6,7 +6,7 @@ import changeVideo from "../actions/currentVideo";
 //dispatchers with your VideoPlayer component props.
 
 const mapStateToProps = store => ({
-  video: store.video
+  video: store.currentVideo
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -1,12 +1,12 @@
 import React from "react";
 import VideoListContainer from "../containers/VideoListContainer";
 
-var VideoListEntry = props => (
+var VideoListEntry = ({ video, handleVideoListEntryTitleClick }) => (
   <div className="video-list-entry">
     <div className="media-left media-middle">
       <img
         className="media-object"
-        src={props.video.snippet.thumbnails.default.url}
+        src={video.snippet.thumbnails.default.url}
         alt=""
       />
     </div>
@@ -18,7 +18,7 @@ var VideoListEntry = props => (
         {video.snippet.title}
       </div>
       <div className="video-list-entry-detail">
-        {props.video.snippet.description}
+        {video.snippet.description}
       </div>
     </div>
   </div>

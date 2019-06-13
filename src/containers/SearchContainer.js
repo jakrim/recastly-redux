@@ -3,7 +3,7 @@ import Search from "./../components/Search.js";
 import handleVideoSearch from "../actions/search.js";
 
 var mapDispatchToProps = dispatch => ({
-  handleInputChange: event => dispatch(handleVideoSearch(event))
+  handleSearchInputChange: event => dispatch(handleVideoSearch(event))
 });
 
 // var searchComponent = props => <Search {...props} />;
