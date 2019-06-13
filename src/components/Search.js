@@ -1,11 +1,11 @@
 import React from "react";
 
-var Search = props => (
+var Search = ({ handleSearchInputChange }) => (
   <div className="search-bar form-inline">
     <input
       className="form-control"
       type="text"
-      onChange={props.handleInputChange}
+      onChange={event => handleSearchInputChange(event.target.value)}
     />
     <button className="btn hidden-sm-down">
       <span className="glyphicon glyphicon-search" />
