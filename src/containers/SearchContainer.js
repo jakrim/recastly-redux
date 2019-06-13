@@ -6,15 +6,7 @@ var mapDispatchToProps = dispatch => ({
   handleSearchInputChange: event => dispatch(handleVideoSearch(event))
 });
 
-// var searchComponent = props => <Search {...props} />;
-
-const SearchContainer = connect(
+export default connect(
   undefined,
   mapDispatchToProps
-)(Search);
-//TODO: define a SearchContainer component which will hook up your action
-// dispatchers with your search component props.
-//HINT: use react-redux 'connect' method to generate a container component from
-//state and dispatch mappings.
-
-export default SearchContainer;
+)(Search);;
