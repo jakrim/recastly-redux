@@ -8,17 +8,16 @@ var handleVideoSearch = q => {
     key: YOUTUBE_API_KEY,
     query: q
   }
-
-  //TODO:  Write an asynchronous action to handle a video search!
   return function thunk(dispatch) {
-    return searchYouTube(options, data => {
-      dispatch(changeVideoList(data));
-      dispatch(changeVideo(data[0]));
-    });
+    return searchYouTube(options)
+      .then(response => response.json())
+      .then(data => {
+        dispatch(changeVideoList(data.items));
+        dispatch(changeVideo(data.items[0]));
+      }).catch(error => {
+        console.error(error);
+      })
   };
 };
 
 export default handleVideoSearch;
-
-// type: "CHANGE_VIDEO_LIST",
-//   videos: videos
